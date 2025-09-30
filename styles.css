@@ -1,0 +1,311 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #556B2F 0%, #8FA31E 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+/* Header con el título grande - CENTRADO */
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInDown 0.8s ease-out;
+    width: 100%;
+}
+
+.main-title {
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: #EFF5D2;
+    text-shadow: 3px 3px 6px rgba(85, 107, 47, 0.5);
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #EFF5D2 0%, #C6D870 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+    width: 100%;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #C6D870;
+    font-weight: 300;
+    letter-spacing: 1px;
+    display: block;
+    width: 100%;
+}
+
+.login-container {
+    background: #EFF5D2;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(85, 107, 47, 0.3);
+    width: 100%;
+    max-width: 450px;
+    border: 3px solid #C6D870;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #556B2F;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #556B2F;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #C6D870;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #FFFFFF;
+    transition: all 0.3s ease;
+    color: #556B2F;
+    font-family: 'Arial', sans-serif;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #8FA31E;
+    box-shadow: 0 0 0 3px rgba(143, 163, 30, 0.2);
+    background-color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #C6D870;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 0.75rem;
+    background: linear-gradient(135deg, #556B2F 0%, #8FA31E 100%);
+    color: #EFF5D2;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.5rem;
+}
+
+.btn-login:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(85, 107, 47, 0.4);
+    background: linear-gradient(135deg, #8FA31E 0%, #556B2F 100%);
+}
+
+.btn-login:active {
+    transform: translateY(-1px);
+}
+
+.btn-login:disabled {
+    background: #C6D870;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Estilos para el enlace de registro */
+.register-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #C6D870;
+}
+
+.register-link p {
+    color: #556B2F;
+    font-size: 0.9rem;
+}
+
+.register-link a {
+    color: #8FA31E;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.register-link a:hover {
+    color: #556B2F;
+    text-decoration: underline;
+}
+
+.message {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.message.success {
+    background-color: #EFF5D2;
+    color: #556B2F;
+    border: 2px solid #8FA31E;
+}
+
+.message.error {
+    background-color: #F8D7DA;
+    color: #721C24;
+    border: 2px solid #F5C6CB;
+}
+
+.message.hidden {
+    display: none;
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-container {
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+/* Efectos decorativos */
+.login-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.login-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(143, 163, 30, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Efecto de reloj en el título - CENTRADO */
+.main-title {
+    position: relative;
+    display: inline-block;
+}
+
+.main-title::after {
+    content: '⏰';
+    position: absolute;
+    top: -10px;
+    right: -40px;
+    font-size: 2rem;
+    opacity: 0.8;
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 3.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .login-container {
+        padding: 2rem;
+        margin: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 2.8rem;
+    }
+    
+    .header {
+        margin-bottom: 2rem;
+    }
+    
+    .login-container {
+        padding: 1.5rem;
+    }
+    
+    .main-title::after {
+        font-size: 1.5rem;
+        right: -30px;
+        top: -5px;
+    }
+}
