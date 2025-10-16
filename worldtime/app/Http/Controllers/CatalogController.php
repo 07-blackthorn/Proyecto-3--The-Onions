@@ -14,42 +14,42 @@ class CatalogController extends Controller
                 'name' => 'Reloj Clásico Elegante',
                 'description' => 'Reloj analógico con correa de cuero genuino y esfera de zafiro.',
                 'price' => 249.99,
-                'image' => 'https://via.placeholder.com/300x200/556B2F/EFF5D2?text=Reloj+Clásico'
+                'image' => asset('images/products/reloj1.jpg')
             ],
             [
                 'id' => 2,
                 'name' => 'Smartwatch Pro',
                 'description' => 'Reloj inteligente con monitor de actividad y GPS integrado.',
                 'price' => 189.99,
-                'image' => 'https://via.placeholder.com/300x200/8FA31E/EFF5D2?text=Smartwatch'
+                'image' => asset('images/products/reloj4.jpg')
             ],
             [
                 'id' => 3,
                 'name' => 'Cronómetro Deportivo',
                 'description' => 'Reloj resistente al agua con cronómetro y alarma.',
                 'price' => 129.99,
-                'image' => 'https://via.placeholder.com/300x200/C6D870/556B2F?text=Reloj+Deportivo'
+                'image' => asset('images/products/reloj2.jpg')
             ],
             [
                 'id' => 4,
                 'name' => 'Edición Limitada Oro',
                 'description' => 'Reloj de lujo con caja de acero inoxidable bañado en oro.',
                 'price' => 799.99,
-                'image' => 'https://via.placeholder.com/300x200/556B2F/EFF5D2?text=Reloj+Lujo'
+                'image' => asset('images/products/reloj3.jpg')
             ],
             [
                 'id' => 5,
                 'name' => 'Colección Vintage',
                 'description' => 'Reloj con diseño retro y correa de cuero envejecido.',
                 'price' => 299.99,
-                'image' => 'https://via.placeholder.com/300x200/8FA31E/EFF5D2?text=Reloj+Vintage'
+                'image' => asset('images/products/reloj6.jpg')
             ],
             [
                 'id' => 6,
                 'name' => 'Diseño Minimalista',
                 'description' => 'Reloj con esfera limpia y correa de malla metálica.',
                 'price' => 179.99,
-                'image' => 'https://via.placeholder.com/300x200/C6D870/556B2F?text=Reloj+Minimalista'
+                'image' => asset('images/products/reloj5.jpg')
             ]
         ];
 
@@ -65,7 +65,7 @@ class CatalogController extends Controller
                 'original_price' => 299.99,
                 'discount_price' => 179.99,
                 'discount' => 40,
-                'image' => 'https://via.placeholder.com/300x200/8FA31E/EFF5D2?text=Oferta+40%'
+                'image' => asset('images/products/reloj1.jpg')
             ],
             [
                 'id' => 102,
@@ -74,7 +74,7 @@ class CatalogController extends Controller
                 'original_price' => 159.99,
                 'discount_price' => 119.99,
                 'discount' => 25,
-                'image' => 'https://via.placeholder.com/300x200/556B2F/EFF5D2?text=Oferta+25%'
+                'image' => asset('images/products/reloj2.jpg')
             ],
             [
                 'id' => 103,
@@ -83,7 +83,7 @@ class CatalogController extends Controller
                 'original_price' => 399.99,
                 'discount_price' => 279.99,
                 'discount' => 30,
-                'image' => 'https://via.placeholder.com/300x200/C6D870/556B2F?text=Oferta+30%'
+                'image' => asset('images/products/reloj3.jpg')
             ],
             [
                 'id' => 104,
@@ -92,7 +92,7 @@ class CatalogController extends Controller
                 'original_price' => 199.99,
                 'discount_price' => 159.99,
                 'discount' => 20,
-                'image' => 'https://via.placeholder.com/300x200/8FA31E/EFF5D2?text=Oferta+20%'
+                'image' => asset('images/products/reloj4.jpg')
             ]
         ];
 
@@ -106,25 +106,25 @@ class CatalogController extends Controller
                 'title' => 'Nueva Colección Primavera 2024',
                 'description' => 'Descubre nuestra exclusiva colección de relojes de primavera con diseños frescos y colores vibrantes.',
                 'date' => '2024-03-15',
-                'image' => 'https://via.placeholder.com/400x250/556B2F/EFF5D2?text=Nueva+Colección'
+                'image' => asset('images/products/reloj6.jpg')
             ],
             [
                 'title' => 'Tecnología Innovadora en Smartwatches',
                 'description' => 'Presentamos nuestra nueva línea de smartwatches con monitoreo de salud avanzado y batería de larga duración.',
                 'date' => '2024-03-10',
-                'image' => 'https://via.placeholder.com/400x250/8FA31E/EFF5D2?text=Tecnología+Nueva'
+                'image' => asset('images/products/reloj5.jpg')
             ],
             [
                 'title' => 'Colaboración con Diseñador Internacional',
                 'description' => 'WorldTime se asocia con reconocido diseñador para lanzar edición limitada de relojes de lujo.',
                 'date' => '2024-03-05',
-                'image' => 'https://via.placeholder.com/400x250/C6D870/556B2F?text=Colaboración'
+                'image' => asset('images/products/reloj4.jpg')
             ],
             [
                 'title' => 'Sistema de Garantía Extendida',
                 'description' => 'Ahora ofrecemos garantía extendida de 3 años en todos nuestros relojes mecánicos.',
                 'date' => '2024-02-28',
-                'image' => 'https://via.placeholder.com/400x250/556B2F/EFF5D2?text=Garantía+Extendida'
+                'image' => asset('images/products/reloj3.jpg')
             ]
         ];
 
@@ -135,45 +135,45 @@ class CatalogController extends Controller
     {
         $brands = [
             [
-                'name' => 'Timex',
+                'name' => 'Rolex',
                 'description' => 'Relojes americanos con más de 160 años de historia. Conocidos por su durabilidad y estilo clásico.',
                 'foundation' => 1854,
-                'image' => 'https://via.placeholder.com/300x200/556B2F/EFF5D2?text=TIMEX',
+                'image' => asset('images/brands/logo1.jpg'),
                 'products_count' => 45
             ],
             [
-                'name' => 'Casio',
+                'name' => 'Fossil',
                 'description' => 'Tecnología japonesa innovadora. Especialistas en relojes digitales y resistentes.',
                 'foundation' => 1946,
-                'image' => 'https://via.placeholder.com/300x200/8FA31E/EFF5D2?text=CASIO',
+                'image' => asset('images/brands/logo2.jpg'),
                 'products_count' => 62
             ],
             [
-                'name' => 'Seiko',
+                'name' => 'Chopard',
                 'description' => 'Artesanía japonesa de precisión. Pioneros en tecnología de cuarzo y movimientos automáticos.',
                 'foundation' => 1881,
-                'image' => 'https://via.placeholder.com/300x200/C6D870/556B2F?text=SEIKO',
+                'image' => asset('images/brands/logo3.jpg'),
                 'products_count' => 38
             ],
             [
-                'name' => 'Fossil',
+                'name' => 'Lotus',
                 'description' => 'Diseño contemporáneo y estilo urbano. Combinando tradición horológica con modernidad.',
                 'foundation' => 1984,
-                'image' => 'https://via.placeholder.com/300x200/556B2F/EFF5D2?text=FOSSIL',
+                'image' => asset('images/brands/logo4.jpg'),
                 'products_count' => 55
             ],
             [
                 'name' => 'Citizen',
                 'description' => 'Tecnología Eco-Drive innovadora. Relojes alimentados por luz, sin necesidad de baterías.',
                 'foundation' => 1918,
-                'image' => 'https://via.placeholder.com/300x200/8FA31E/EFF5D2?text=CITIZEN',
+                'image' => asset('images/brands/logo6.jpg'),
                 'products_count' => 41
             ],
             [
-                'name' => 'Swatch',
+                'name' => 'Zodiac',
                 'description' => 'Diseños coloridos y asequibles. Revolucionando la industria relojera suiza desde 1983.',
                 'foundation' => 1983,
-                'image' => 'https://via.placeholder.com/300x200/C6D870/556B2F?text=SWATCH',
+                'image' => asset('images/brands/logo5.png'),
                 'products_count' => 29
             ]
         ];
