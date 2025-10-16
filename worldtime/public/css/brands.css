@@ -1,0 +1,96 @@
+/* public/css/brands.css */
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.brand-card {
+    background: #EFF5D2;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(85, 107, 47, 0.2);
+    transition: all 0.3s ease;
+    border: 2px solid #C6D870;
+    text-align: center;
+}
+
+.brand-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(85, 107, 47, 0.3);
+}
+
+.brand-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 2px solid #C6D870;
+}
+
+.brand-content {
+    padding: 1.5rem;
+}
+
+.brand-name {
+    font-size: 1.4rem;
+    color: #556B2F;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.brand-foundation {
+    color: #8FA31E;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.brand-description {
+    color: #556B2F;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.brand-stats {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(143, 163, 30, 0.1);
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #556B2F;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: #8FA31E;
+}
+
+.view-products {
+    background: linear-gradient(135deg, #556B2F 0%, #8FA31E 100%);
+    color: #EFF5D2;
+    border: none;
+    border-radius: 5px;
+    padding: 0.7rem 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.view-products:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(85, 107, 47, 0.3);
+}
