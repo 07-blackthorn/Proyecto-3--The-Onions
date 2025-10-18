@@ -3,12 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión - WordTime</title>
+    <title>Iniciar Sesión - WorldTime</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        :root {
+            --azul-noche: #0F2C4C;
+            --azul-principal: #1A5FA0;
+            --azul-accento: #6DB3E9;
+            --negro: #000000;
+            --blanco: #FFFFFF;
+        }
+        
         body {
-            background: linear-gradient(135deg, #c6d870 0%, #8fa31e 100%);
+            background: linear-gradient(135deg, var(--azul-accento) 0%, var(--azul-principal) 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -18,19 +26,19 @@
         }
         .login-container {
             width: 100%;
-            max-width: 420px; /* ANCHO FIJO COMO LA IMAGEN */
+            max-width: 420px;
         }
         .login-card {
-            background: #eff5d2;
-            border-radius: 25px;
-            box-shadow: 0 20px 40px rgba(85, 107, 47, 0.25);
+            background: var(--blanco);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(15, 44, 76, 0.3);
             overflow: hidden;
             border: none;
             width: 100%;
         }
         .login-header {
-            background: #556b2f;
-            color: #eff5d2;
+            background: linear-gradient(135deg, var(--azul-noche), var(--azul-principal));
+            color: var(--blanco);
             padding: 2.5rem 2rem;
             text-align: center;
         }
@@ -52,20 +60,20 @@
         .form-control {
             border-radius: 12px;
             padding: 16px 18px;
-            border: 2px solid #c6d870;
-            background: white;
+            border: 2px solid var(--azul-accento);
+            background: var(--blanco);
             font-size: 1.05rem;
             transition: all 0.3s ease;
             margin-top: 8px;
             width: 100%;
         }
         .form-control:focus {
-            border-color: #8fa31e;
-            box-shadow: 0 0 0 0.3rem rgba(143, 163, 30, 0.15);
-            background: white;
+            border-color: var(--azul-principal);
+            box-shadow: 0 0 0 0.3rem rgba(26, 95, 160, 0.15);
+            background: var(--blanco);
         }
         .btn-login {
-            background: linear-gradient(135deg, #556b2f 0%, #8fa31e 100%);
+            background: linear-gradient(135deg, var(--azul-principal), var(--azul-noche));
             border: none;
             padding: 18px;
             font-weight: 600;
@@ -75,24 +83,24 @@
             letter-spacing: 0.5px;
             transition: all 0.3s ease;
             margin: 2rem 0 1.5rem 0;
-            color: white;
+            color: var(--blanco);
         }
         .btn-login:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(85, 107, 47, 0.3);
-            background: linear-gradient(135deg, #8fa31e 0%, #556b2f 100%);
-            color: white;
+            box-shadow: 0 8px 20px rgba(26, 95, 160, 0.3);
+            background: linear-gradient(135deg, var(--azul-noche), var(--azul-principal));
+            color: var(--blanco);
         }
         .form-label {
             font-weight: 600;
-            color: #556b2f;
+            color: var(--azul-noche);
             margin-bottom: 0.5rem;
             font-size: 1rem;
             display: block;
         }
         .form-check-input:checked {
-            background-color: #8fa31e;
-            border-color: #8fa31e;
+            background-color: var(--azul-principal);
+            border-color: var(--azul-principal);
         }
         .form-check {
             margin: 1.5rem 0;
@@ -100,12 +108,12 @@
             align-items: center;
         }
         .form-check-label {
-            color: #556b2f;
+            color: var(--azul-noche);
             font-weight: 500;
             margin-left: 0.5rem;
         }
         .forgot-link {
-            color: #556b2f;
+            color: var(--azul-principal);
             font-weight: 500;
             text-decoration: none;
             transition: color 0.3s ease;
@@ -115,12 +123,12 @@
             margin-top: 1rem;
         }
         .forgot-link:hover {
-            color: #8fa31e;
+            color: var(--azul-noche);
             text-decoration: underline;
         }
-        .clock-icon {
-            background: #8fa31e;
-            color: #eff5d2;
+        .globe-icon {
+            background: var(--azul-accento);
+            color: var(--azul-noche);
             width: 70px;
             height: 70px;
             border-radius: 50%;
@@ -129,6 +137,12 @@
             justify-content: center;
             margin-bottom: 1rem;
             font-size: 1.8rem;
+            transition: all 0.3s ease;
+        }
+        .globe-icon:hover {
+            transform: rotate(15deg);
+            background: var(--azul-principal);
+            color: var(--blanco);
         }
         .form-section {
             margin-bottom: 1.8rem;
@@ -136,21 +150,36 @@
         .divider {
             border: none;
             height: 1px;
-            background: linear-gradient(90deg, transparent, #c6d870, transparent);
+            background: linear-gradient(90deg, transparent, var(--azul-accento), transparent);
             margin: 2rem 0;
         }
         .register-link {
             text-align: center;
             margin-top: 1.5rem;
-            color: #556b2f;
+            color: var(--azul-noche);
         }
         .register-link a {
-            color: #8fa31e;
+            color: var(--azul-principal);
             font-weight: 600;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
         .register-link a:hover {
+            color: var(--azul-noche);
             text-decoration: underline;
+        }
+        .text-danger {
+            color: #dc3545 !important;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        .alert-success {
+            background: linear-gradient(135deg, var(--azul-accento), var(--azul-principal));
+            color: var(--blanco);
+            border: none;
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
         }
     </style>
 </head>
@@ -159,10 +188,10 @@
         <div class="login-card">
             <!-- Header -->
             <div class="login-header">
-                <div class="clock-icon">
-                    <i class="fas fa-clock"></i>
+                <div class="globe-icon">
+                    <i class="fas fa-globe-americas"></i>
                 </div>
-                <h1 class="brand-title">WordTime</h1>
+                <h1 class="brand-title">WorldTime</h1>
                 <p class="brand-subtitle">Tu portal de tiempo y control</p>
             </div>
 
@@ -171,7 +200,7 @@
                 <!-- Session Status -->
                 @if (session('status'))
                     <div class="alert alert-success">
-                        {{ session('status') }}
+                        <i class="fas fa-check-circle me-2"></i>{{ session('status') }}
                     </div>
                 @endif
 
@@ -181,7 +210,7 @@
                     <!-- Email -->
                     <div class="form-section">
                         <label for="email" class="form-label">
-                            Correo electrónico
+                            <i class="fas fa-envelope me-2"></i>Correo electrónico
                         </label>
                         <input type="email" class="form-control" id="email" name="email" 
                                value="{{ old('email') }}" required autofocus 
@@ -196,7 +225,7 @@
                     <!-- Password -->
                     <div class="form-section">
                         <label for="password" class="form-label">
-                            Contraseña
+                            <i class="fas fa-lock me-2"></i>Contraseña
                         </label>
                         <input type="password" class="form-control" id="password" name="password" 
                                required placeholder="********">
@@ -217,8 +246,15 @@
 
                     <!-- Login Button -->
                     <button type="submit" class="btn btn-login">
-                        <strong>ACCEDER A WORLD TIME</strong>
+                        <i class="fas fa-sign-in-alt me-2"></i><strong>ACCEDER A WORLD TIME</strong>
                     </button>
+
+                    <!-- Forgot Password -->
+                    @if (Route::has('password.request'))
+                        <a class="forgot-link" href="{{ route('password.request') }}">
+                            <i class="fas fa-key me-1"></i>¿Olvidaste tu contraseña?
+                        </a>
+                    @endif
 
                     <!-- Register Link -->
                     <div class="register-link">
@@ -230,5 +266,19 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Efecto de rotación en el icono del globo
+        document.addEventListener('DOMContentLoaded', function() {
+            const globeIcon = document.querySelector('.globe-icon');
+            if (globeIcon) {
+                globeIcon.addEventListener('mouseenter', function() {
+                    this.style.transform = 'rotate(15deg) scale(1.1)';
+                });
+                globeIcon.addEventListener('mouseleave', function() {
+                    this.style.transform = 'rotate(0) scale(1)';
+                });
+            }
+        });
+    </script>
 </body>
 </html>

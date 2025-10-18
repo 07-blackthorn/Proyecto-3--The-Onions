@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro - WordTime</title>
+    <title>Registro - WorldTime</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --verde-oscuro: #556b2f;
-            --verde-medio: #8fa31e;
-            --verde-claro: #c6d870;
-            --crema: #eff5d2;
+            --azul-noche: #0F2C4C;
+            --azul-principal: #1A5FA0;
+            --azul-accento: #6DB3E9;
+            --negro: #000000;
+            --blanco: #FFFFFF;
         }
         
         body {
-            background: linear-gradient(135deg, var(--verde-claro) 0%, var(--verde-medio) 100%);
+            background: linear-gradient(135deg, var(--azul-accento) 0%, var(--azul-principal) 100%);
             min-height: 100vh;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
@@ -31,15 +32,15 @@
         
         .register-card {
             border: none;
-            border-radius: 25px;
-            box-shadow: 0 15px 35px rgba(85, 107, 47, 0.2);
-            background: var(--crema);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(15, 44, 76, 0.3);
+            background: var(--blanco);
             overflow: hidden;
         }
         
         .register-header {
-            background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-medio));
-            color: white;
+            background: linear-gradient(135deg, var(--azul-noche), var(--azul-principal));
+            color: var(--blanco);
             padding: 2.5rem 2rem;
             text-align: center;
             border-radius: 0 0 30px 30px;
@@ -62,35 +63,35 @@
         }
         
         .form-control {
-            border-radius: 15px;
+            border-radius: 12px;
             border: 2px solid #e9ecef;
             padding: 15px 20px;
             font-size: 1rem;
             transition: all 0.3s ease;
-            background: white;
+            background: var(--blanco);
         }
         
         .form-control:focus {
-            border-color: var(--verde-medio);
-            box-shadow: 0 0 0 0.3rem rgba(143, 163, 30, 0.15);
+            border-color: var(--azul-principal);
+            box-shadow: 0 0 0 0.3rem rgba(26, 95, 160, 0.15);
             transform: translateY(-2px);
         }
         
         .form-label {
             font-weight: 600;
-            color: var(--verde-oscuro);
+            color: var(--azul-noche);
             margin-bottom: 0.8rem;
             font-size: 0.95rem;
         }
         
         .btn-register {
-            background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-medio));
+            background: linear-gradient(135deg, var(--azul-principal), var(--azul-noche));
             border: none;
-            border-radius: 15px;
+            border-radius: 12px;
             padding: 15px 30px;
             font-weight: 600;
             font-size: 1.1rem;
-            color: white;
+            color: var(--blanco);
             width: 100%;
             transition: all 0.3s ease;
             margin-top: 1rem;
@@ -98,26 +99,26 @@
         
         .btn-register:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(85, 107, 47, 0.3);
-            background: linear-gradient(135deg, var(--verde-medio), var(--verde-oscuro));
+            box-shadow: 0 10px 25px rgba(26, 95, 160, 0.3);
+            background: linear-gradient(135deg, var(--azul-noche), var(--azul-principal));
         }
         
         .login-link {
             text-align: center;
             margin-top: 2rem;
             padding-top: 1.5rem;
-            border-top: 1px solid rgba(85, 107, 47, 0.1);
+            border-top: 1px solid rgba(15, 44, 76, 0.1);
         }
         
         .login-link a {
-            color: var(--verde-medio);
+            color: var(--azul-principal);
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
         
         .login-link a:hover {
-            color: var(--verde-oscuro);
+            color: var(--azul-noche);
             text-decoration: underline;
         }
         
@@ -134,7 +135,7 @@
             left: 15px;
             top: 50%;
             transform: translateY(-50%);
-            color: var(--verde-medio);
+            color: var(--azul-principal);
             z-index: 5;
         }
         
@@ -145,16 +146,35 @@
             transform: translateY(-50%);
             background: none;
             border: none;
-            color: var(--verde-medio);
+            color: var(--azul-principal);
             cursor: pointer;
             z-index: 5;
+            transition: color 0.3s ease;
+        }
+        
+        .password-toggle:hover {
+            color: var(--azul-noche);
         }
         
         .form-text {
-            color: var(--verde-medio);
+            color: var(--azul-principal);
             font-size: 0.85rem;
         }
         
+        .invalid-feedback {
+            color: #dc3545;
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+        }
+        
+        .is-invalid {
+            border-color: #dc3545 !important;
+        }
+        
+        .is-invalid:focus {
+            box-shadow: 0 0 0 0.3rem rgba(220, 53, 69, 0.15) !important;
+        }
+
         /* Animaciones */
         @keyframes fadeInUp {
             from {
@@ -170,15 +190,20 @@
         .register-card {
             animation: fadeInUp 0.6s ease-out;
         }
+
+        /* Efectos de iconos al focus */
+        .form-control:focus + .input-icon {
+            color: var(--azul-noche);
+        }
     </style>
 </head>
 <body>
     <div class="register-container">
         <div class="register-card">
             <div class="register-header">
-                <i class="fas fa-clock"></i>
+                <i class="fas fa-globe-americas"></i>
                 <h2>Crear Cuenta</h2>
-                <p class="mb-0 opacity-75">Únete a WordTime</p>
+                <p class="mb-0 opacity-75">Únete a WorldTime</p>
             </div>
             
             <div class="register-body">
@@ -186,20 +211,20 @@
                     @csrf
 
                     <!-- Nombre -->
-<div class="mb-4">
-    <label for="nombre" class="form-label">Nombre Completo</label>
-    <div class="input-group">
-        <i class="input-icon fas fa-user"></i>
-        <input id="nombre" type="text" class="form-control @error('nombre') is-invalid @enderror" 
-               name="nombre" value="{{ old('nombre') }}" required autocomplete="nombre" autofocus
-               placeholder="Ingresa tu nombre completo">
-    </div>
-    @error('nombre')
-        <div class="invalid-feedback d-block">
-            {{ $message }}
-        </div>
-    @enderror
-</div>
+                    <div class="mb-4">
+                        <label for="nombre" class="form-label">Nombre Completo</label>
+                        <div class="input-group">
+                            <i class="input-icon fas fa-user"></i>
+                            <input id="nombre" type="text" class="form-control @error('nombre') is-invalid @enderror" 
+                                   name="nombre" value="{{ old('nombre') }}" required autocomplete="nombre" autofocus
+                                   placeholder="Ingresa tu nombre completo">
+                        </div>
+                        @error('nombre')
+                            <div class="invalid-feedback d-block">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
 
                     <!-- Email -->
                     <div class="mb-4">
@@ -286,10 +311,16 @@
             const inputs = document.querySelectorAll('.form-control');
             inputs.forEach(input => {
                 input.addEventListener('focus', function() {
-                    this.parentNode.querySelector('.input-icon').style.color = 'var(--verde-oscuro)';
+                    const icon = this.parentNode.querySelector('.input-icon');
+                    if (icon) {
+                        icon.style.color = 'var(--azul-noche)';
+                    }
                 });
                 input.addEventListener('blur', function() {
-                    this.parentNode.querySelector('.input-icon').style.color = 'var(--verde-medio)';
+                    const icon = this.parentNode.querySelector('.input-icon');
+                    if (icon) {
+                        icon.style.color = 'var(--azul-principal)';
+                    }
                 });
             });
         });

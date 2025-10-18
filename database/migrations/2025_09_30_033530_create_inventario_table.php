@@ -12,15 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('inventario', function (Blueprint $table) {
-        $table->id();
-        $table->foreignId('producto_id')->constrained('productos');
-        $table->integer('cantidad_disponible');
-        $table->integer('stock_minimo');
-        $table->string('modelo')->nullable();
-        $table->text('notas')->nullable();
-        $table->timestamps();
-        $table->unique('producto_id');
-        });
+    $table->id();
+    $table->foreignId('producto_id')->constrained('productos');
+    $table->integer('cantidad_disponible')->default(0); // <-- aquí
+    $table->integer('stock_minimo');
+    $table->string('modelo')->nullable();
+    $table->text('notas')->nullable();
+    $table->timestamps();
+    $table->unique('producto_id');
+});
+
     }
 
     /**

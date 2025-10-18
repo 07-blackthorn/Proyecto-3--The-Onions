@@ -3,141 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - WordTime</title>
+    <title>Dashboard - WorldTime</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --verde-oscuro: #556b2f;
-            --verde-medio: #8fa31e;
-            --verde-claro: #c6d870;
-            --crema: #eff5d2;
+            --azul-noche: #0F2C4C;
+            --azul-principal: #1A5FA0;
+            --azul-accento: #6DB3E9;
+            --negro: #000000;
+            --blanco: #FFFFFF;
         }
         body {
-            background: linear-gradient(135deg, #c6d870 0%, #8fa31e 100%);
+            background: linear-gradient(135deg, var(--azul-accento) 0%, var(--azul-principal) 100%);
             min-height: 100vh;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--azul-noche);
         }
         .navbar {
-            background: var(--verde-oscuro) !important;
-            box-shadow: 0 2px 15px rgba(85, 107, 47, 0.3);
+            background: var(--azul-noche) !important;
+            box-shadow: 0 2px 15px rgba(15, 44, 76, 0.4);
         }
         .navbar-brand {
             font-weight: 700;
             font-size: 1.5rem;
+            color: var(--blanco) !important;
         }
         .card {
             border: none;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(85, 107, 47, 0.15);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(15, 44, 76, 0.15);
             transition: all 0.3s ease;
-            background: var(--crema);
+            background: var(--blanco);
+            overflow: hidden;
         }
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(85, 107, 47, 0.25);
+            box-shadow: 0 12px 30px rgba(15, 44, 76, 0.25);
         }
         .stats-card {
-            border-left: 5px solid;
-            background: white;
+            border-top: 4px solid;
+            background: var(--blanco);
+            transition: all 0.3s ease;
         }
-        .stats-card.bg-primary {
-            border-left-color: var(--verde-oscuro);
-            background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-medio)) !important;
+        .stats-card:hover {
+            transform: translateY(-3px);
         }
-        .stats-card.bg-success {
-            border-left-color: var(--verde-medio);
-            background: linear-gradient(135deg, var(--verde-medio), var(--verde-claro)) !important;
+        .stats-card .card-body {
+            padding: 1.5rem;
         }
-        .stats-card.bg-warning {
-            border-left-color: #e6a23c;
-            background: linear-gradient(135deg, #e6a23c, #f6ad55) !important;
+        .stats-card h3 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
         }
-        .stats-card.bg-info {
-            border-left-color: #17a2b8;
-            background: linear-gradient(135deg, #17a2b8, #6cb2eb) !important;
-        }
+        .stats-card:nth-child(1) h3 { color: var(--azul-principal); }
+        .stats-card:nth-child(2) h3 { color: var(--azul-noche); }
+        .stats-card:nth-child(3) h3 { color: var(--azul-accento); }
+        .stats-card:nth-child(4) h3 { color: var(--azul-principal); }
+        
+        .stats-card:nth-child(1) { border-top-color: var(--azul-principal); }
+        .stats-card:nth-child(2) { border-top-color: var(--azul-noche); }
+        .stats-card:nth-child(3) { border-top-color: var(--azul-accento); }
+        .stats-card:nth-child(4) { border-top-color: var(--azul-principal); }
+
         .btn-primary {
-            background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-medio));
+            background: linear-gradient(135deg, var(--azul-principal), var(--azul-noche));
             border: none;
-            border-radius: 12px;
+            border-radius: 10px;
             padding: 12px 24px;
             font-weight: 600;
             transition: all 0.3s ease;
+            color: var(--blanco);
         }
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(85, 107, 47, 0.3);
-            background: linear-gradient(135deg, var(--verde-medio), var(--verde-oscuro));
+            box-shadow: 0 8px 20px rgba(26, 95, 160, 0.3);
+            background: linear-gradient(135deg, var(--azul-noche), var(--azul-principal));
         }
         .btn-success {
-            background: linear-gradient(135deg, var(--verde-medio), var(--verde-claro));
+            background: linear-gradient(135deg, var(--azul-accento), var(--azul-principal));
             border: none;
-            border-radius: 12px;
+            border-radius: 10px;
             padding: 12px 24px;
             font-weight: 600;
-            color: var(--verde-oscuro);
+            color: var(--blanco);
             transition: all 0.3s ease;
         }
         .btn-success:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(143, 163, 30, 0.3);
+            box-shadow: 0 8px 20px rgba(109, 179, 233, 0.3);
+            background: linear-gradient(135deg, var(--azul-principal), var(--azul-accento));
         }
         .btn-warning {
-            background: linear-gradient(135deg, #e6a23c, #f6ad55);
+            background: linear-gradient(135deg, var(--azul-accento), #4A90E2);
             border: none;
-            border-radius: 12px;
+            border-radius: 10px;
             padding: 12px 24px;
             font-weight: 600;
+            color: var(--blanco);
             transition: all 0.3s ease;
         }
         .btn-warning:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(230, 162, 60, 0.3);
+            box-shadow: 0 8px 20px rgba(109, 179, 233, 0.3);
+            background: linear-gradient(135deg, #4A90E2, var(--azul-accento));
         }
         .btn-info {
-            background: linear-gradient(135deg, #17a2b8, #6cb2eb);
+            background: linear-gradient(135deg, var(--azul-principal), var(--azul-accento));
             border: none;
-            border-radius: 12px;
+            border-radius: 10px;
             padding: 12px 24px;
             font-weight: 600;
+            color: var(--blanco);
             transition: all 0.3s ease;
         }
         .btn-info:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(23, 162, 184, 0.3);
+            box-shadow: 0 8px 20px rgba(26, 95, 160, 0.3);
+            background: linear-gradient(135deg, var(--azul-accento), var(--azul-principal));
         }
         .card-header {
-            background: var(--verde-oscuro);
-            color: var(--crema);
-            border-radius: 20px 20px 0 0 !important;
+            background: linear-gradient(135deg, var(--azul-noche), var(--azul-principal));
+            color: var(--blanco);
+            border-radius: 15px 15px 0 0 !important;
             padding: 1.5rem;
             font-weight: 600;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
+            border: none;
         }
-        .display-6 {
+        .dashboard-title {
+            color: var(--blanco);
             font-weight: 700;
-            color: white;
-        }
-        .card-title {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: white;
+            text-shadow: 0 2px 4px rgba(15, 44, 76, 0.3);
+            margin-bottom: 1.5rem;
         }
         .container {
             max-width: 1200px;
         }
         .logout-btn {
             background: transparent;
-            border: 2px solid var(--crema);
-            color: var(--crema);
-            border-radius: 10px;
+            border: 2px solid var(--azul-accento);
+            color: var(--azul-accento);
+            border-radius: 8px;
             padding: 8px 20px;
             transition: all 0.3s ease;
+            font-weight: 600;
         }
         .logout-btn:hover {
-            background: var(--crema);
-            color: var(--verde-oscuro);
+            background: var(--azul-accento);
+            color: var(--azul-noche);
+            transform: translateY(-1px);
+        }
+        .text-muted {
+            color: #6c757d !important;
+            font-weight: 500;
+        }
+        .navbar-nav .nav-link {
+            color: var(--azul-accento) !important;
         }
     </style>
 </head>
@@ -146,7 +168,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <i class="fas fa-clock me-2"></i>WordTime
+                <i class="fas fa-globe-americas me-2"></i>WorldTime
             </a>
             <div class="navbar-nav ms-auto">
                 <form method="POST" action="{{ route('logout') }}">
@@ -161,52 +183,52 @@
 
     <!-- Main Content -->
     <div class="container mt-4">
-        <h2 class="mb-4" style="color: var(--verde-oscuro); font-weight: 700;">Dashboard Administrativo</h2>
+        <h2 class="dashboard-title">
+            <i class="fas fa-chart-line me-2"></i>Dashboard Administrativo
+        </h2>
         
         <!-- Stats Cards -->
         <div class="row">
-    <div class="col-md-3 mb-3">
-        <div class="card text-center">
-            <div class="card-body">
-                <h3 class="text-primary">{{ App\Models\Producto::count() }}</h3>
-                <p class="text-muted">Total Productos</p>
+            <div class="col-md-3 mb-4">
+                <div class="card stats-card">
+                    <div class="card-body text-center">
+                        <h3>{{ App\Models\Producto::count() }}</h3>
+                        <p class="text-muted">Total Productos</p>
+                        <i class="fas fa-box text-muted mt-2" style="font-size: 1.5rem;"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card stats-card">
+                    <div class="card-body text-center">
+                        <h3>${{ number_format(App\Models\Producto::sum('precio'), 2) }}</h3>
+                        <p class="text-muted">Valor Total</p>
+                        <i class="fas fa-dollar-sign text-muted mt-2" style="font-size: 1.5rem;"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card stats-card">
+                    <div class="card-body text-center">
+                        <h3>{{ App\Models\Producto::distinct('categoria')->count('categoria') }}</h3>
+                        <p class="text-muted">Categorías</p>
+                        <i class="fas fa-tags text-muted mt-2" style="font-size: 1.5rem;"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card stats-card">
+                    <div class="card-body text-center">
+                        <h3>{{ App\Models\Inventario::count() }}</h3>
+                        <p class="text-muted">En Inventario</p>
+                        <i class="fas fa-warehouse text-muted mt-2" style="font-size: 1.5rem;"></i>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-3 mb-3">
-        <div class="card text-center">
-            <div class="card-body">
-                <h3 class="text-success">
-                    ${{ number_format(App\Models\Producto::sum('precio'), 2) }}
-                </h3>
-                <p class="text-muted">Valor Total</p>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3 mb-3">
-        <div class="card text-center">
-            <div class="card-body">
-                <h3 class="text-warning">
-                    {{ App\Models\Producto::distinct('categoria')->count('categoria') }}
-                </h3>
-                <p class="text-muted">Categorías</p>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3 mb-3">
-        <div class="card text-center">
-            <div class="card-body">
-                <h3 class="text-info">
-                    {{ App\Models\Inventario::count() }}
-                </h3>
-                <p class="text-muted">En Inventario</p>
-            </div>
-        </div>
-    </div>
-</div>
         
         <!-- Management Cards -->
-        <div class="card">
+        <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-cog me-2"></i>Gestión del Sistema
             </div>
@@ -223,12 +245,12 @@
                         </a>
                     </div>
                     <div class="col-md-3 mb-3">
-                        <a href="#" class="btn btn-warning w-100 text-white">
+                        <a href="#" class="btn btn-warning w-100">
                             <i class="fas fa-users me-2"></i>Gestión de Clientes
                         </a>
                     </div>
                     <div class="col-md-3 mb-3">
-                        <a href="#" class="btn btn-info w-100 text-white">
+                        <a href="http://127.0.0.1:8000/reparaciones" class="btn btn-info w-100">
                             <i class="fas fa-tools me-2"></i>Seguimiento de Reparaciones
                         </a>
                     </div>
