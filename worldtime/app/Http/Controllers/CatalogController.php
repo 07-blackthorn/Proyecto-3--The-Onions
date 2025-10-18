@@ -186,4 +186,114 @@ class CatalogController extends Controller
         return view('catalog.about');
     }
 
+    public function showProduct($id)
+    {
+        // Base de datos de productos, esto deberia ir en la base de datos
+        $allProducts = [
+            1 => [
+                'id' => 1,
+                'name' => 'Reloj Clásico Elegante',
+                'description' => 'Reloj analógico con correa de cuero genuino y esfera de zafiro. Perfecto para ocasiones formales y eventos especiales.',
+                'full_description' => 'Este reloj clásico combina la elegancia tradicional con la artesanía moderna. Fabricado con materiales de primera calidad, incluye una caja de acero inoxidable de 40mm, esfera de zafiro anti-rayaduras y movimiento automático suizo. La correa de cuero genuino garantiza comodidad durante todo el día.',
+                'price' => 249.99,
+                'original_price' => 299.99,
+                'discount' => 17,
+                'image' => asset('images/products/reloj1.jpg'),
+                'gallery' => [
+                    asset('images/products/reloj1.jpg'),
+                    asset('images/products/reloj2.jpg'),
+                    asset('images/products/reloj3.jpg')
+                ],
+                'specifications' => [
+                    'Movimiento' => 'Automático Suizo',
+                    'Caja' => 'Acero Inoxidable 40mm',
+                    'Cristal' => 'Zafiro Anti-rayaduras',
+                    'Resistencia al Agua' => '5 ATM (50m)',
+                    'Correa' => 'Cuero Genuino Negro',
+                    'Garantía' => '2 años'
+                ],
+                'features' => [
+                    'Calendario fecha',
+                    'Manecillas luminiscentes',
+                    'Caja trasera transparente',
+                    'Resistente a impactos'
+                ],
+                'stock' => 15,
+                'sku' => 'WT-CL-001',
+                'brand' => 'Rolex',
+                'category' => 'Analógicos'
+            ],
+            2 => [
+                'id' => 2,
+                'name' => 'Smartwatch Pro',
+                'description' => 'Reloj inteligente con monitor de actividad, GPS integrado y resistencia al agua.',
+                'full_description' => 'El Smartwatch Pro redefine lo que un reloj inteligente puede hacer. Con pantalla AMOLED de 1.4", monitorización cardiaca 24/7, GPS integrado y resistencia al agua IP68. Perfecto para deportistas y profesionales activos.',
+                'price' => 189.99,
+                'original_price' => 249.99,
+                'discount' => 24,
+                'image' => asset('images/products/reloj4.jpg'),
+                'gallery' => [
+                    asset('images/products/reloj4.jpg'),
+                    asset('images/products/reloj5.jpg')
+                ],
+                'specifications' => [
+                    'Pantalla' => 'AMOLED 1.4"',
+                    'Batería' => '7 días de duración',
+                    'Conectividad' => 'Bluetooth 5.0, WiFi',
+                    'Resistencia al Agua' => 'IP68',
+                    'Sensores' => 'Cardíaco, GPS, Acelerómetro',
+                    'Compatibilidad' => 'iOS & Android'
+                ],
+                'features' => [
+                    'Notificaciones inteligentes',
+                    'Monitor de sueño',
+                    'Control de música',
+                    'Asistente virtual'
+                ],
+                'stock' => 8,
+                'sku' => 'WT-SW-002',
+                'brand' => 'Fossil',
+                'category' => 'Smartwatches'
+            ],
+            3 => [
+                'id' => 3,
+                'name' => 'Cronómetro Deportivo',
+                'description' => 'Reloj resistente al agua con cronómetro, alarma y luz LED.',
+                'full_description' => 'Diseñado para los amantes del deporte y la aventura. Este cronómetro cuenta con resistencia al agua de 100m, cronómetro profesional, luz LED integrada y alarma múltiple. Ideal para natación, running y actividades outdoor.',
+                'price' => 129.99,
+                'image' => asset('images/products/reloj2.jpg'),
+                'gallery' => [
+                    asset('images/products/reloj2.jpg')
+                ],
+                'specifications' => [
+                    'Movimiento' => 'Cuarzo Digital',
+                    'Caja' => 'Resina Polimérica',
+                    'Resistencia al Agua' => '10 ATM (100m)',
+                    'Cronómetro' => '1/100 segundos',
+                    'Alarma' => 'Multialarma',
+                    'Iluminación' => 'LED Autoiluminación'
+                ],
+                'features' => [
+                    'Cronómetro profesional',
+                    'Resistente a golpes',
+                    'Alarma diaria',
+                    'Calendario automático'
+                ],
+                'stock' => 25,
+                'sku' => 'WT-SP-003',
+                'brand' => 'Chopard',
+                'category' => 'Deportivos'
+            ],
+            // ... agregar más productos según sea necesario
+        ];
+
+        $product = $allProducts[$id] ?? null;
+
+        if (!$product) {
+            abort(404, 'Producto no encontrado');
+        }
+
+        return view('catalog.product', compact('product'));
+    }
+
 }

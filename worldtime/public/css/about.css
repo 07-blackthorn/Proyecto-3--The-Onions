@@ -37,11 +37,12 @@
 }
 
 .mission-card, .vision-card {
-    background: rgba(143, 163, 30, 0.1);
+    background: #EFF5D2;
     padding: 2rem;
     border-radius: 10px;
     text-align: center;
-    border: 1px solid #C6D870;
+    box-shadow: 0 5px 15px rgba(85, 107, 47, 0.1);
+    border-left: 4px solid #8FA31E;
 }
 
 .mission-title, .vision-title {

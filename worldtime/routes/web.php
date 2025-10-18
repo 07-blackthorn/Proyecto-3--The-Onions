@@ -19,4 +19,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/news', [CatalogController::class, 'news'])->name('catalog.news');
     Route::get('/brands', [CatalogController::class, 'brands'])->name('catalog.brands');
     Route::get('/about', [CatalogController::class, 'about'])->name('catalog.about');
+    // Ruta para los productos
+    Route::get('/product/{id}', [CatalogController::class, 'showProduct'])->name('catalog.product.show');
 });

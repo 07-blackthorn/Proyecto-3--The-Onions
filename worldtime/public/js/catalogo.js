@@ -4,9 +4,17 @@ document.getElementById('price').addEventListener('input', function() {
 });
 
 // Simulación de funcionalidad de botones
+// Funcionalidad para "Ver Detalles"
 document.querySelectorAll('.btn-details').forEach(button => {
     button.addEventListener('click', function() {
-        alert('Funcionalidad de detalles próximamente');
+        const productCard = this.closest('.product-card');
+        const productName = productCard.querySelector('.product-name').textContent;
+        
+        // Por ahora, simulamos con IDs 1, 2, 3...
+        const productIndex = Array.from(document.querySelectorAll('.product-card')).indexOf(productCard) + 1;
+        
+        // Redirigir a la página de detalles
+        window.location.href = `/product/${productIndex}`;
     });
 });
 
@@ -15,14 +23,6 @@ document.querySelectorAll('.btn-cart').forEach(button => {
         const productName = this.closest('.product-card').querySelector('.product-name').textContent;
         alert(`"${productName}" añadido al carrito`);
     });
-});
-
-document.querySelector('.btn-logout').addEventListener('click', function() {
-    if(confirm('¿Estás seguro de que quieres cerrar sesión?')) {
-        alert('Cerrando sesión...');
-        // En una implementación real, redirigiría al login
-        // window.location.href = 'index.html';
-    }
 });
 
 // Funcionalidad de paginación
